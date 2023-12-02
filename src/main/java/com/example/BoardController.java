@@ -21,26 +21,27 @@ public class BoardController {
     return "list";
   }
 
-  @RequestMapping(value = "/add", method = RequestMethod.GET)
+  @RequestMapping(value="/add",method =RequestMethod.GET)
   public String addPost(){
     return "addpostform";
   }
 
-  @RequestMapping(value = "/addok", method = RequestMethod.POST)
-  public String addPostOK(BoardVO vo) {
-    if (boardService.insertBoard(vo) == 0)
-      System.out.println("데이터 추가 실해 ");
+  @RequestMapping(value="/addok", method= RequestMethod.POST)
+  public String addPostOK(BoardVO vo){
+    if(boardService.insertBoard(vo)==0)
+      System.out.println("데이터 추가 실패");
     else
-      System.out.println("데이터 추가 성공!");
+      System.out.println("데이터 추가 성공!!!");
     return "redirect:list";
   }
 
   @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
   public String editPost(@PathVariable("id") int id, Model model){
     BoardVO boardVO = boardService.getBoard(id);
-    model.addAttribute("u", boardVO);
+    model.addAttribute("boardVO", boardVO);
     return "editform";
   }
+
 
   @RequestMapping(value = "/editok", method = RequestMethod.POST)
   public String editPostOk(BoardVO vo){

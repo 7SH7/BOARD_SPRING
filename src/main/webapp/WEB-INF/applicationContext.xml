@@ -6,7 +6,7 @@
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver" />
-        <property name="url" value="jdbc:mariadb://walab.handong.edu:3306/p232_22000116/BOARD?useSSL=false"/>
+        <property name="url" value="jdbc:mariadb://walab.handong.edu:3306/p232_22000116?useSSL=false"/>
         <property name="username" value="p232_22000116"/>
         <property name="password" value="ohnuL3"/>
     </bean>

@@ -12,7 +12,7 @@ public class BoardDAO {
   private JdbcTemplate jdbcTemplate;
 
   public int insertBoard(BoardVO vo){
-    String sql = "insert into BOARD (title, writer, content, category) vales("
+    String sql = "insert into BOARD (title, writer, content, category) values("
         + "'" + vo.getTitle() +"',"
         + "'" + vo.getWriter() +"',"
         + "'" + vo.getContent() + "',"
@@ -21,7 +21,7 @@ public class BoardDAO {
   }
 
   public int deleteBoard(int seq){
-    String sql = "delete form BOARD where seq = " + seq;
+    String sql = "delete FROM BOARD where seq = " + seq;
     return jdbcTemplate.update(sql);
   }
 
