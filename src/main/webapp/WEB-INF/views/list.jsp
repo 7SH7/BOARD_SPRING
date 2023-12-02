@@ -6,8 +6,8 @@
   Time: 오후 1:49
   To change this template use File | Settings | File Templates.
 --%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8"%>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <html>
 <script>
@@ -27,6 +27,7 @@
         <th>ID</th>
         <th>Category</th>
         <th>Title</th>
+        <th>Writer</th>
         <th>Content</th>
         <th>Regdate</th>
         <th>Edit</th>
@@ -38,7 +39,7 @@
         <tr>
             <td>${u.seq + 1}</td>
             <td>${u.category}</td>
-            <td>${u.title}</td>
+            <td><a href="posts/${u.getSeq()}">${u.title}</a></td>
             <td>${u.writer}</td>
             <td>${u.content}</td>
             <td>${u.regdate}</td>

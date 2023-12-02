@@ -12,10 +12,11 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>수정하기</title>
 </head>
 <body>
 
+<h1>이전 글 수정하기</h1>
 <form:form modelAttribute="boardVO" method="POST" action="../editok">
     <form:hidden path="seq" />
         <table id="edit">

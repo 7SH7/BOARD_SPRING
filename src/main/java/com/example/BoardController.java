@@ -42,6 +42,12 @@ public class BoardController {
     return "editform";
   }
 
+  @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
+  public String viewPost(@PathVariable("id") int id, Model model){
+    BoardVO boardVO = boardService.getBoard(id);
+    model.addAttribute("u", boardVO);
+    return "posts";
+  }
 
   @RequestMapping(value = "/editok", method = RequestMethod.POST)
   public String editPostOk(BoardVO vo){
